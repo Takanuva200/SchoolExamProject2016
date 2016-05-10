@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Client_Application.Model
 {
+    /// <summary>
+    /// A class that represents 1 movement sensor
+    /// </summary>
     class MovementSensor
     {
         /// <summary>
@@ -20,25 +23,35 @@ namespace Client_Application.Model
         /// <summary>
         /// Gets or sets the number of time the movement sensor has been activated
         /// </summary>
-        public int NumberOfActivations { get; set; }
+        public List<Activations> NumberOfActivations { get; set; }
         /// <summary>
         /// Gets or sets the UdpClient that is going to be used by the webservice
         /// </summary>
         public UdpClient SensorClient { get; set; }
 
         /// <summary>
-        /// A class that represents 1 movement sensor
+        /// Creates a MovementSensor.
         /// </summary>
         /// <param name="id">Is the ID of sensor</param>
         /// <param name="coordinates">Is the address of the sensor</param>
         /// <param name="numberOfActiovations">Is the number of times the sensor has been activated</param>
         /// <param name="sensorClient">Is the UdpClient used for connecting to the sensor</param>
-        public MovementSensor(int id,string coordinates, int numberOfActiovations, UdpClient sensorClient)
+        public MovementSensor(int id, string coordinates, List<Activations> numberOfActiovations, UdpClient sensorClient)
         {
             ID = id;
             Coordinates = coordinates;
             NumberOfActivations = numberOfActiovations;
             SensorClient = sensorClient;
         }
+
+    }
+
+    /// <summary>
+    /// Is a struct composed of a Datetime property and a int.
+    /// </summary>
+    struct Activations
+    {
+        public DateTime Time { get; set; }
+        public int NumberOfActivations { get; set; }
     }
 }

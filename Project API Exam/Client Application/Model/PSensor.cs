@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Client_Application.Model
 {
+    /// <summary>
+    /// A class representing a pair of Movement Sensors.
+    /// </summary>
     class PSensor
     {
         /// <summary>
-        /// Gets the ID of the PSensor. Private setter.
+        /// Gets the ID of the PSensor. Private setter..
         /// </summary>
         public int ID { get; private set; }
         /// <summary>
@@ -17,16 +20,16 @@ namespace Client_Application.Model
         /// </summary>
         public string Coordinates { get; set; }
         /// <summary>
-        /// Gets or sets the Sensor1 in the PSensor
+        /// Gets or sets the Sensor Arrival in the PSensor
         /// </summary>
         public MovementSensor SensorA { get; set; }
         /// <summary>
-        /// Gets or sets the Sensor2 in the PSensor
+        /// Gets or sets the Sensor Bye in the PSensor.
         /// </summary>
         public MovementSensor SensorB { get; set; }
 
         /// <summary>
-        /// A class representing a pair of Movement Sensors
+        /// Creates a PSensor The sensors should be assigned so the SensorA is activated and then afterwards SensorB for the correct count.
         /// </summary>
         /// <param name="id">Is the ID of the PSensor</param>
         /// <param name="coordinate">Is the address of the PSensor</param>
