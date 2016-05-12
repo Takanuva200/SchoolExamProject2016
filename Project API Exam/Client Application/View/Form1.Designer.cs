@@ -1,4 +1,4 @@
-﻿namespace Client_Application
+﻿namespace Client_Application.View
 {
     partial class Form1
     {
@@ -30,17 +30,14 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBoxAdvertisements = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxOwner = new System.Windows.Forms.TextBox();
-            this.textBoxCoordinates = new System.Windows.Forms.TextBox();
+            this.label_AdID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label_AdID = new System.Windows.Forms.Label();
+            this.textBoxCoordinates = new System.Windows.Forms.TextBox();
+            this.textBoxOwner = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxPortSB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,18 +54,25 @@
             this.textBoxSACoordinates = new System.Windows.Forms.TextBox();
             this.textBoxSAIPAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.listBoxAdvertisements = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listBoxCoordinates = new System.Windows.Forms.ListBox();
             this.listBoxNumberOfPSensors = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
+            this.dateTimePickerOfExpiration = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listBoxDateOfExpire = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,6 +87,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.dateTimePickerOfExpiration);
             this.tabPage1.Controls.Add(this.label_AdID);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
@@ -97,76 +103,14 @@
             this.tabPage1.Text = "Create Advertisement";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label_AdID
             // 
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(332, 238);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Add a Pair Sensor";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 268);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(777, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(11, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Create Advertisement";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBoxAdvertisements
-            // 
-            this.listBoxAdvertisements.FormattingEnabled = true;
-            this.listBoxAdvertisements.Location = new System.Drawing.Point(342, 50);
-            this.listBoxAdvertisements.Name = "listBoxAdvertisements";
-            this.listBoxAdvertisements.Size = new System.Drawing.Size(156, 212);
-            this.listBoxAdvertisements.TabIndex = 2;
-            this.listBoxAdvertisements.SelectedIndexChanged += new System.EventHandler(this.listBoxAdvertisements_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(480, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Current Advertisements:";
-            // 
-            // textBoxOwner
-            // 
-            this.textBoxOwner.Location = new System.Drawing.Point(8, 76);
-            this.textBoxOwner.Name = "textBoxOwner";
-            this.textBoxOwner.Size = new System.Drawing.Size(231, 20);
-            this.textBoxOwner.TabIndex = 1;
-            // 
-            // textBoxCoordinates
-            // 
-            this.textBoxCoordinates.Location = new System.Drawing.Point(8, 115);
-            this.textBoxCoordinates.Name = "textBoxCoordinates";
-            this.textBoxCoordinates.Size = new System.Drawing.Size(231, 20);
-            this.textBoxCoordinates.TabIndex = 2;
+            this.label_AdID.AutoSize = true;
+            this.label_AdID.Location = new System.Drawing.Point(8, 35);
+            this.label_AdID.Name = "label_AdID";
+            this.label_AdID.Size = new System.Drawing.Size(59, 13);
+            this.label_AdID.TabIndex = 7;
+            this.label_AdID.Text = "label_AdID";
             // 
             // label4
             // 
@@ -186,14 +130,52 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Coordinates:";
             // 
-            // label_AdID
+            // textBoxCoordinates
             // 
-            this.label_AdID.AutoSize = true;
-            this.label_AdID.Location = new System.Drawing.Point(8, 35);
-            this.label_AdID.Name = "label_AdID";
-            this.label_AdID.Size = new System.Drawing.Size(59, 13);
-            this.label_AdID.TabIndex = 7;
-            this.label_AdID.Text = "label_AdID";
+            this.textBoxCoordinates.Location = new System.Drawing.Point(8, 115);
+            this.textBoxCoordinates.Name = "textBoxCoordinates";
+            this.textBoxCoordinates.Size = new System.Drawing.Size(231, 20);
+            this.textBoxCoordinates.TabIndex = 2;
+            // 
+            // textBoxOwner
+            // 
+            this.textBoxOwner.Location = new System.Drawing.Point(8, 76);
+            this.textBoxOwner.Name = "textBoxOwner";
+            this.textBoxOwner.Size = new System.Drawing.Size(231, 20);
+            this.textBoxOwner.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(11, 209);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Create Advertisement";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(332, 238);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Add a Pair Sensor";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(128, 209);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Add Sensor";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -341,20 +323,44 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "IP address";
             // 
-            // button2
+            // statusStrip1
             // 
-            this.button2.Location = new System.Drawing.Point(128, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Add Sensor";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 268);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(912, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // listBoxAdvertisements
+            // 
+            this.listBoxAdvertisements.FormattingEnabled = true;
+            this.listBoxAdvertisements.Location = new System.Drawing.Point(342, 50);
+            this.listBoxAdvertisements.Name = "listBoxAdvertisements";
+            this.listBoxAdvertisements.Size = new System.Drawing.Size(156, 212);
+            this.listBoxAdvertisements.TabIndex = 2;
+            this.listBoxAdvertisements.SelectedIndexChanged += new System.EventHandler(this.listBoxAdvertisements_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(480, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Current Advertisements:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(494, 34);
+            this.label10.Location = new System.Drawing.Point(495, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 5;
@@ -363,7 +369,7 @@
             // listBoxCoordinates
             // 
             this.listBoxCoordinates.FormattingEnabled = true;
-            this.listBoxCoordinates.Location = new System.Drawing.Point(497, 50);
+            this.listBoxCoordinates.Location = new System.Drawing.Point(498, 50);
             this.listBoxCoordinates.Name = "listBoxCoordinates";
             this.listBoxCoordinates.Size = new System.Drawing.Size(210, 212);
             this.listBoxCoordinates.TabIndex = 4;
@@ -371,7 +377,7 @@
             // listBoxNumberOfPSensors
             // 
             this.listBoxNumberOfPSensors.FormattingEnabled = true;
-            this.listBoxNumberOfPSensors.Location = new System.Drawing.Point(706, 50);
+            this.listBoxNumberOfPSensors.Location = new System.Drawing.Point(708, 50);
             this.listBoxNumberOfPSensors.Name = "listBoxNumberOfPSensors";
             this.listBoxNumberOfPSensors.Size = new System.Drawing.Size(59, 212);
             this.listBoxNumberOfPSensors.TabIndex = 6;
@@ -379,7 +385,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(703, 34);
+            this.label11.Location = new System.Drawing.Point(705, 34);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 7;
@@ -394,11 +400,46 @@
             this.label.TabIndex = 8;
             this.label.Text = "Owner";
             // 
+            // dateTimePickerOfExpiration
+            // 
+            this.dateTimePickerOfExpiration.Location = new System.Drawing.Point(11, 158);
+            this.dateTimePickerOfExpiration.Name = "dateTimePickerOfExpiration";
+            this.dateTimePickerOfExpiration.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerOfExpiration.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 142);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(127, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Choose date of expiration";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(787, 34);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Date of expiration";
+            // 
+            // listBoxDateOfExpire
+            // 
+            this.listBoxDateOfExpire.FormattingEnabled = true;
+            this.listBoxDateOfExpire.Location = new System.Drawing.Point(767, 50);
+            this.listBoxDateOfExpire.Name = "listBoxDateOfExpire";
+            this.listBoxDateOfExpire.Size = new System.Drawing.Size(124, 212);
+            this.listBoxDateOfExpire.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 290);
+            this.ClientSize = new System.Drawing.Size(912, 290);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.listBoxDateOfExpire);
             this.Controls.Add(this.label);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.listBoxNumberOfPSensors);
@@ -415,12 +456,12 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,6 +504,10 @@
         private System.Windows.Forms.ListBox listBoxNumberOfPSensors;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOfExpiration;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox listBoxDateOfExpire;
     }
 }
 

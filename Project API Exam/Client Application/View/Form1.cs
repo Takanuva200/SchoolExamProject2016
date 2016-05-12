@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Client_Application.Controller;
 using Client_Application.Model;
 
-namespace Client_Application
+namespace Client_Application.View
 {
     public partial class Form1 : Form
     {
@@ -19,8 +13,9 @@ namespace Client_Application
 
         Advertisement currentSelectedAd;
         public Form1()
-        { 
+        {
             InitializeComponent();
+            updateList();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -34,21 +29,21 @@ namespace Client_Application
         {
             try
             {
-                if (!string.IsNullOrWhiteSpace(textBoxOwner.Text))
-                {
                     var owner = textBoxOwner.Text;
                     var coords = textBoxCoordinates.Text;
-                    var newAd = new Advertisement(coords, owner);
-                    adController.AddCreateAdvertisement(newAd);
+                    if(string.IsNullOrWhiteSpace(owner))
+                        throw new ArgumentException("The field Owner can't be empty.");
+                    if(string.IsNullOrWhiteSpace(coords))
+                        throw new ArgumentException("The field Coordinates can't be empty.");
+
+                    adController.CreateAdvertisement(coords, owner, dateTimePickerOfExpiration.Value);
                     updateList();
-                }
             }
             catch (Exception eX)
             {
-
                 MessageBox.Show(eX.Message);
             }
-            
+
         }
         /// <summary>
         /// Adds a PSensor to the currently selected Advertisement.
@@ -58,63 +53,102 @@ namespace Client_Application
             try
             {
                 currentSelectedAd = listBoxAdvertisements.SelectedItem as Advertisement;
-                if (!string.IsNullOrWhiteSpace(textBoxSACoordinates.Text) && !string.IsNullOrWhiteSpace(textBoxSBCoordinates.Text))
-                {
+                    Dictionary<string, string> dictionaryOfStrings = new Dictionary<string, string>();
                     var SACoords = textBoxSACoordinates.Text;
+                    dictionaryOfStrings.Add("Coordinates",SACoords);
                     var SAIP = textBoxSAIPAddress.Text;
+                    dictionaryOfStrings.Add("IP", SAIP);
                     var SAPort = textBoxPortSA.Text;
-                    var sensorA = new MovementSensor(adController.LatestAdID, SACoords,new List<Activations>(),new UdpClient(SAIP,int.Parse(SAPort)) );
+                    dictionaryOfStrings.Add("Port", SAPort);
 
                     var SBCoords = textBoxSBCoordinates.Text;
+                    dictionaryOfStrings.Add("Coordinates",SBCoords);
                     var SBIP = textBoxSBIPAddress.Text;
+                    dictionaryOfStrings.Add("IP", SBIP);
                     var SBPort = textBoxPortSB.Text;
-                    var sensorB = new MovementSensor(adController.LatestAdID, SBCoords, new List<Activations>(), new UdpClient(SBIP, int.Parse(SBPort)));
-
-                    if(currentSelectedAd == null)
+                    dictionaryOfStrings.Add("Port", SBPort);
+                    string errorString = "";
+                    foreach (var item in dictionaryOfStrings)
+                    {
+                        errorString = checkForNull(item.Key, item.Value);                        
+                    }
+                    if(!string.IsNullOrWhiteSpace(errorString))
+                        throw new ArgumentException(errorString);
+                    if (currentSelectedAd == null)
                         throw new NullReferenceException("You need to select an advertisement in the list.");
 
-                    PSensor psensor = new PSensor(currentSelectedAd.LatestPsId, textBoxSACoordinates.Text, sensorA, sensorB);
-                    currentSelectedAd.AddPSensor(psensor);
+                    adController.AddSensorsToAd(1, SACoords, new List<Activations>(), new UdpClient(SAIP, int.Parse(SAPort)),
+                    2, SBCoords, new List<Activations>(), new UdpClient(SBIP, int.Parse(SBPort)), currentSelectedAd);
                     updateList();
-                }
+                
             }
             catch (Exception eX)
             {
                 MessageBox.Show(eX.Message);
             }
-            
-        }
 
+        }
+        /// <summary>
+        /// Checks the different fields and properties if they have an error in them.
+        /// </summary>
+        /// <param name="content">Is the content that is going to be checked</param>
+        /// <param name="property">Is the property</param>
+        /// <returns></returns>
         private string checkForNull(string content, string property)
         {
             string field = "property";
-
-            switch (property)
+            string extra = "";
+            if (string.IsNullOrWhiteSpace(content))
             {
-                case "Coordinates":
-                    if (content == null)
+                switch (property)
+                {
+                    case "Coordinates":
                         field = "Coordinates";
-
-                    break;
-                case "IP":
-                    if (content == null)
+                        break;
+                    case "IP":
                         field = "IP";
-                    break;
-                case "Port":
+                        if (checkIP(content))
+                            extra = "Your IP address can only be 12 numbers long";
+                        break;
+                    case "Port":
+                        field = "Port";
+                        if (content.Length <= 4)
+                        {
+                            extra = "\nThe port number can only be 4 numbers long";
+                        }
+                        break;
+                }
+                return "You have made an error in field: " + field + extra;
 
-                    break;
             }
-            if (content == null)
-            {
-                return "You have made an error in field: " + field;
-            }
+
             return null;
         }
+
+        private bool checkIP(string content)
+        {
+            bool check = false;
+            var splits = content.Split('.');
+            foreach (var split in splits)
+            {
+                if (split.Length > 3)
+                    check = true;
+                else
+                {
+                    check = false;
+                }
+            }
+            return check;
+        }
+
         /// <summary>
         /// Call this when an update for the lists is necessary.
         /// </summary>
         private void updateList()
         {
+            label_AdID.Text = "Current ID: " +adController.LatestAdID;
+            label_IDSA.Text = "Current ID: 1";
+            label_IDSB.Text = "Current ID: 2";
             var currentCatalog = adController.AdvertisementCatalog;
 
             var source = new BindingSource(currentCatalog, null);
@@ -124,6 +158,8 @@ namespace Client_Application
             listBoxCoordinates.DisplayMember = "Coordinates";
             listBoxNumberOfPSensors.DataSource = source;
             listBoxNumberOfPSensors.DisplayMember = "GetPSensorCount";
+            listBoxDateOfExpire.DataSource = source;
+            listBoxDateOfExpire.DisplayMember = "DateOfExpire";
         }
 
         private void Form1_Load(object sender, EventArgs e)

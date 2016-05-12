@@ -33,12 +33,12 @@ namespace Client_Application.Model
         /// </summary>
         /// <param name="coordinates">Is the coordinates of the advertisement</param>
         /// <param name="owner">Is the owner of the advertisement</param>
-        public Advertisement(string coordinates, string owner)
+        public Advertisement(string coordinates, string owner, DateTime dateOfExpire)
         {
             PSensors = new List<PSensor>();
             Coordinates = coordinates;
             Owner = owner;
-            DateOfExpire = DateTime.Now;
+            DateOfExpire = dateOfExpire;
         }
         /// <summary>
         /// Gets the current number of PSensors the advertisement has.

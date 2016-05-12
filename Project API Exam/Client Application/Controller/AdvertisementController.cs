@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Client_Application.Model;
@@ -12,7 +13,7 @@ namespace Client_Application.Controller
     /// </summary>
     class AdvertisementController
     {
-        private List<Advertisement> advertisementCatalog; 
+        private List<Advertisement> advertisementCatalog;
         /// <summary>
         /// Gets the current advertisement catalog. Private set.
         /// </summary>
@@ -26,14 +27,6 @@ namespace Client_Application.Controller
         /// </summary>
         public AdvertisementController()
         {
-            GetAdvertisementCatalog();
-        }
-
-        /// <summary>
-        /// Sets the AdvertisementCatalog.
-        /// </summary>
-        private void GetAdvertisementCatalog()
-        {
             if (advertisementCatalog == null)
             {
                 try
@@ -45,25 +38,48 @@ namespace Client_Application.Controller
                 {
                     advertisementCatalog = new List<Advertisement>();
                 }
-            }
+            }  
         }
+        /// <summary>
+        /// Call this to create and add an advertisement.
+        /// </summary>
+        /// <param name="coords">Is the coordinates of the advertisement</param>
+        /// <param name="owner">Is the owner of the advertisement</param>
+        /// <returns></returns>
+        internal bool CreateAdvertisement(string coords, string owner, DateTime dateOfExpire)
+        {
+            var newAd = new Advertisement(coords, owner, dateOfExpire);
+            if (advertisementCatalog.Contains(newAd))
+                return false;
+
+            advertisementCatalog.Add(newAd);
+            return true;
+
+        }
+
         /// <summary>
         /// Gets the latest ID for the Advertisement.
         /// </summary>
-        public int LatestAdID => advertisementCatalog.Count+1;
+        public int LatestAdID => advertisementCatalog.Count + 1;
 
         /// <summary>
-        /// Call this method to add an advertisement to the catalog.
+        /// Adds a PSensor to the current selected Advertisement.
         /// </summary>
-        /// <param name="newAd">The new advertisement that is going to be added</param>
-        /// <returns> A bool based on the success. True if it succeeded, false if the catalog already contains an identical advertisement</returns>
-        public bool AddCreateAdvertisement(Advertisement newAd)
+        /// <param name="id1">Is Automatically set to 1</param>
+        /// <param name="sACoords">Coordinates of SensorA</param>
+        /// <param name="list1">A list contained the struct Activations</param>
+        /// <param name="udpClient1">UdpClient for SensorA</param>
+        /// <param name="id2">Is Automatically set to 2</param>
+        /// <param name="sBCoords">Coordinates of SensorB</param>
+        /// <param name="list2">A list contained the struct Activations</param>
+        /// <param name="udpClient2">UdpClient for SensorB</param>
+        /// <param name="currentSelectedAd">IS the current selected ad</param>
+        internal void AddSensorsToAd(int id1, string sACoords, List<Activations> list1, UdpClient udpClient1, int id2, string sBCoords, List<Activations> list2, UdpClient udpClient2, Advertisement currentSelectedAd)
         {
-            if (advertisementCatalog.Contains(newAd))
-                return false;
-            advertisementCatalog.Add(newAd);
-            return true;
+            var sensorA = new MovementSensor(LatestAdID, sACoords, new List<Activations>(), udpClient1);
+            var sensorB = new MovementSensor(LatestAdID, sBCoords, new List<Activations>(), udpClient2);
+            var psensor = new PSensor(currentSelectedAd.LatestPsId, sACoords, sensorA, sensorB);
+            currentSelectedAd.AddPSensor(psensor);
         }
-
     }
 }
