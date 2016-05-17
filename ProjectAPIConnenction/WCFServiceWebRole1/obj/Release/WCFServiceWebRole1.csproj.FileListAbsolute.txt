@@ -1,0 +1,1 @@
+C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\obj\Release\WCFServiceWebRole1.csprojResolveAssemblyReference.cache

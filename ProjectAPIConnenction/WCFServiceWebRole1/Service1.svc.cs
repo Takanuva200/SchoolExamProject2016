@@ -222,16 +222,16 @@ namespace WCFServiceWebRole1
             return null;
         }
 
-        private static Location ReadLocation(IDataRecord reader)
-        {
-            var koordinate = reader.GetString(1);
-            var location = new Location();
-            {
-                location.Koordinates = koordinate;
-            }
+        //private static Location ReadLocation(IDataRecord reader)
+        //{
+        //    var koordinate = reader.GetString(1);
+        //    var location = new Location();
+        //    {
+        //        location.Koordinates = koordinate;
+        //    }
 
-            return location;
-        }
+        //    return location;
+        //}
 
         private static MovementSensor ReadSensor(IDataRecord reader)
         {

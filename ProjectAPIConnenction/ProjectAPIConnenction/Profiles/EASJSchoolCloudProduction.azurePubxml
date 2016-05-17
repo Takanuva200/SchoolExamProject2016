@@ -9,8 +9,8 @@
     <AzureEnableRemoteDesktop>True</AzureEnableRemoteDesktop>
     <AzureEnableWebDeploy>False</AzureEnableWebDeploy>
     <AzureFallbackToDeleteAndRecreateIfUpgradeFails>False</AzureFallbackToDeleteAndRecreateIfUpgradeFails>
-    <AzureHostedServiceLabel>EASJSchoolCloud</AzureHostedServiceLabel>
-    <AzureHostedServiceName>EASJSchoolCloud</AzureHostedServiceName>
+    <AzureHostedServiceLabel>APIConnection</AzureHostedServiceLabel>
+    <AzureHostedServiceName>APIConnection</AzureHostedServiceName>
     <AzureEnableIntelliTrace>False</AzureEnableIntelliTrace>
     <AzureEnableProfiling>False</AzureEnableProfiling>
     <AzureServiceConfiguration>Cloud</AzureServiceConfiguration>
