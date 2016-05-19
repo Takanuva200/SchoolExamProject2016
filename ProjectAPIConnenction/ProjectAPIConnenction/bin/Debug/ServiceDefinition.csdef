@@ -25,14 +25,8 @@
     </Endpoints>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\bas28\Documents\Visual Studio 2015\Projects\ProjectAPIConnenction\ProjectAPIConnenction\rcf\Debug\WCFServiceWebRole1Content\" />
-      </Content>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Users\bas28\Documents\Visual Studio 2015\Projects\ProjectAPIConnenction\ProjectAPIConnenction\ecf\WCFServiceWebRole1Content\" />
+        <SourceDirectory path="C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\rcf\Debug\WCFServiceWebRole1Content\" />
       </Content>
     </Contents>
-    <Imports>
-      <Import moduleName="Diagnostics" />
-    </Imports>
   </WebRole>
 </ServiceDefinition>

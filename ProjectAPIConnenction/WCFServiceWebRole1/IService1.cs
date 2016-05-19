@@ -36,6 +36,24 @@ namespace WCFServiceWebRole1
 
         [OperationContract]
         MovementSensorToAds GetSpecficMovementSensorToAds(int id);
+
+        [OperationContract]
+        void DeleteSpecificAd(int id);
+
+        [OperationContract]
+        void DeleteSpecificSensor(int id);
+
+        [OperationContract]
+        void DeleteSpecificSensorToAd(int id);
+
+        [OperationContract]
+        Ads AddAdvertisment(Ads newAdd);
+
+        [OperationContract]
+        MovementSensor AddMovementSensor(MovementSensor newSensor);
+
+        [OperationContract]
+        MovementSensorToAds AddMovementSensorToAd(MovementSensorToAds newMStoAd);
     }
 
 
