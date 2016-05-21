@@ -1,17 +1,17 @@
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] DiagnosticsStoreRootPath set to: C:\Users\bas28\AppData\Local\dftmp\Resources\3e427a49-485e-47c1-ad20-ee68e5d85218
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Loading config file: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Config file to read: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Checking VM Type
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Extension set to Emulator Mode
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Reading XML configuration file
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Bypassing private config decryption
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:14] Stopping the running plugin, if any
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:15] No DiagnosticsPlugin is running.
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:15] Killing any DiagnosticsPlugin that might remain.
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:15] Killing any MonAgentHost that might remain.
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:15] Diagnostics plugin stopped successfully
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:45:15] Resetting DiagnosticPlugin
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:46:26] DiagnosticsPlugin launched successfully with new configuration
-DiagnosticsPluginLauncher.exe Information: 0 : [18-05-2016 11:46:26] DiagnosticPlugin exited with code 0
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] DiagnosticsStoreRootPath set to: C:\Users\bas28\AppData\Local\dftmp\Resources\bb1b1ceb-ce75-4ae1-84ef-a4f90f038784
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Loading config file: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Config file to read: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:50] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:51] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:51] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:51] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:52] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:18:52] Resetting DiagnosticPlugin
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:20:02] DiagnosticsPlugin launched successfully with new configuration
+DiagnosticsPluginLauncher.exe Information: 0 : [20-05-2016 15:20:02] DiagnosticPlugin exited with code 0

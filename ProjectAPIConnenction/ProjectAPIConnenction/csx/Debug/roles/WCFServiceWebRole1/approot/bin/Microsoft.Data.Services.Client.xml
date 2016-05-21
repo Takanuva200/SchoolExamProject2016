@@ -4854,7 +4854,7 @@
         <member name="F:System.Data.Services.Client.Materialization.CollectionValueMaterializationPolicy.primitiveValueMaterializationPolicy">
             <summary> The primitive value materialization policy. </summary>
         </member>
-        <member name="M:System.Data.Services.Client.MatMÂ@DÓ@$DÈM.CollectionValueMaterializationPolicy.#ctor(System.Data.Services.Client.Materialization.IODataMaterializerContext,System.Data.Services.Client.Materialization.PrimitiveValueMaterializationPolicy)">
+        <member name="M:System.Data.Services.Client.Materialization.CollectionValueMaterializationPolicy.#ctor(System.Data.Services.Client.Materialization.IODataMaterializerContext,System.Data.Services.Client.Materialization.PrimitiveValueMaterializationPolicy)">
             <summary>
             Initializes a new instance of the <see cref="T:System.Data.Services.Client.Materialization.CollectionValueMaterializationPolicy"/> class.
             </summary>

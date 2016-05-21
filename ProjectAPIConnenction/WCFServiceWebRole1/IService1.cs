@@ -29,31 +29,49 @@ namespace WCFServiceWebRole1
         //Location GetSpecificLocation(int id);
 
         [OperationContract]
-        MovementSensor GetSpecificMovementSensor(int id);
+        MovementSensor GetSpecificMovementSensor(string address);
 
         [OperationContract]
-        Ads GetSpecificAd(int id);
+        Ads GetSpecificAd(string address);
 
         [OperationContract]
-        MovementSensorToAds GetSpecficMovementSensorToAds(int id);
+        MovementSensorToAds GetSpecficMovementSensorToAds(string address);
 
         [OperationContract]
-        void DeleteSpecificAd(int id);
+        void DeleteSpecificAd(string address);
 
         [OperationContract]
-        void DeleteSpecificSensor(int id);
+        void DeleteSpecificSensor(string address);
 
         [OperationContract]
-        void DeleteSpecificSensorToAd(int id);
+        void DeleteSpecificSensorToAd(string address);
 
         [OperationContract]
-        Ads AddAdvertisment(Ads newAdd);
+        string  AddAdvertisment(string addressOwner);
 
         [OperationContract]
         MovementSensor AddMovementSensor(MovementSensor newSensor);
 
         [OperationContract]
         MovementSensorToAds AddMovementSensorToAd(MovementSensorToAds newMStoAd);
+
+        //[OperationContract]
+        //List<int> GetAdID();
+
+        //[OperationContract]
+        //List<int> GetMovementID();
+
+        //[OperationContract]
+        //List<int> GetMovementToAdID();
+
+        [OperationContract]
+        Ads UpdateAdvertisment(string address, Ads updatedAd);
+
+        [OperationContract]
+        MovementSensor UpdateMSensor(string address, MovementSensor newSensor);
+
+        [OperationContract]
+        MovementSensorToAds UpdateMsToAd(string address, MovementSensorToAds newMsAds);
     }
 
 
@@ -90,6 +108,9 @@ namespace WCFServiceWebRole1
     [DataContract]
     public class MovementSensor
     {
+        //[DataMember]
+        //public int ID { get;}
+
         [DataMember]
         public string Address { get; set; }
 
@@ -100,6 +121,9 @@ namespace WCFServiceWebRole1
     [DataContract]
     public class Ads
     {
+        //[DataMember]
+        //public int ID { get;}
+
         [DataMember]
         public string Address { get; set; }
 
@@ -109,17 +133,23 @@ namespace WCFServiceWebRole1
         [DataMember]
         public DateTime dateOfExpire { get; set; }
 
+        
+
         //[DataMember]
         //public int locationID { get; set; }
 
-        [DataMember]
-        public List<MovementSensor> MovementSensor { get; set; }
     }
 
     [DataContract]
     public class MovementSensorToAds
     {
-        public int MovementSensorID { get; set; }
-        public int AdID { get; set; }
+        //[DataMember]
+        //public int ID { get; set; }
+
+        [DataMember]
+        public string MovementSensorAddress { get; set; }
+
+        [DataMember]
+        public string AdAddress { get; set; }
     }
 }

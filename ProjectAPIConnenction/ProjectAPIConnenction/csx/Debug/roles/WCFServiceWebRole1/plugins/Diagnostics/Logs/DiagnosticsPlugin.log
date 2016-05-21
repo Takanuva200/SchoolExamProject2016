@@ -1,6 +1,6 @@
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Starting DiagnosticPlugin.exe DiagnosticPlugin-ShutdownEvent DiagnosticPlugin-TotalShutdownEvent -wadVer1v5
-DiagnosticsPlugin.exe Error: 0 : [18-05-2016 11:45:16] Failed to save IIS Directory state
-DiagnosticsPlugin.exe Error: 0 : [18-05-2016 11:45:16] System.UnauthorizedAccessException: Filnavn: redirection.config
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Starting DiagnosticPlugin.exe DiagnosticPlugin-ShutdownEvent DiagnosticPlugin-TotalShutdownEvent -wadVer1v5
+DiagnosticsPlugin.exe Error: 0 : [20-05-2016 15:18:52] Failed to save IIS Directory state
+DiagnosticsPlugin.exe Error: 0 : [20-05-2016 15:18:52] System.UnauthorizedAccessException: Filnavn: redirection.config
 Fejl: Konfigurationsfilen blev ikke læst, da der ikke var tilstrækkelige rettigheder
 
 
@@ -11,18 +11,18 @@ Fejl: Konfigurationsfilen blev ikke læst, da der ikke var tilstrækkelige retti
    ved Microsoft.Web.Administration.ServerManager.SitesCollectionCreator()
    ved Microsoft.Web.Administration.Lazy.Initialize[T](T& target, CreateInstanceDelegate`1 valueFactory)
    ved Microsoft.Azure.Plugins.Plugin.DiagnosticsPluginManager.SaveIISDirectoryState()
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Starting DiagnosticsPlugin
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] DiagnosticsStoreRootPath set to: C:\Users\bas28\AppData\Local\dftmp\Resources\3e427a49-485e-47c1-ad20-ee68e5d85218
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Loading config file: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Config file to read: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Checking VM Type
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Extension set to Emulator Mode
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Reading XML configuration file
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Bypassing private config decryption
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] WadCfg is provided in initial configuration. Using that to initialize Diagnostics.
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] <PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Starting DiagnosticsPlugin
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] DiagnosticsStoreRootPath set to: C:\Users\bas28\AppData\Local\dftmp\Resources\bb1b1ceb-ce75-4ae1-84ef-a4f90f038784
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Loading config file: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Config file to read: C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Checking VM Type
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Emulator config file set to C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\ProjectAPIConnenction\csx\Debug\roles\WCFServiceWebRole1\approot\diagnostics.wadcfgx
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Extension set to Emulator Mode
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Reading XML configuration file
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Bypassing private config decryption
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] WadCfg is provided in initial configuration. Using that to initialize Diagnostics.
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] <PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
   <WadCfg>
     <DiagnosticMonitorConfiguration overallQuotaInMB="4096">
       <DiagnosticInfrastructureLogs scheduledTransferLogLevelFilter="Error" />
@@ -54,12 +54,12 @@ DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] <PublicConfig xmlns
   </WadCfg>
   <StorageAccount>devstoreaccount1</StorageAccount>
 </PublicConfig>
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Private setting is loaded
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:16] Is config json/xml loaded
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:17] Successfully created checkpoint file C:\Users\bas28\AppData\Local\dftmp\Resources\3e427a49-485e-47c1-ad20-ee68e5d85218\WAD0105\Configuration\Checkpoint.txt
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:17] Will use local resource directory C:\Users\bas28\AppData\Local\dftmp\Resources\3e427a49-485e-47c1-ad20-ee68e5d85218\WAD0105
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:17] Will use endpoint https://core.windows.net for storage.
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:18] Exception in creating the ServerManager; is IIS installed?
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Private setting is loaded
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Is config json/xml loaded
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Successfully created checkpoint file C:\Users\bas28\AppData\Local\dftmp\Resources\bb1b1ceb-ce75-4ae1-84ef-a4f90f038784\WAD0105\Configuration\Checkpoint.txt
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Will use local resource directory C:\Users\bas28\AppData\Local\dftmp\Resources\bb1b1ceb-ce75-4ae1-84ef-a4f90f038784\WAD0105
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:52] Will use endpoint https://core.windows.net for storage.
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:53] Exception in creating the ServerManager; is IIS installed?
  Error:System.UnauthorizedAccessException: Filnavn: redirection.config
 Fejl: Konfigurationsfilen blev ikke læst, da der ikke var tilstrækkelige rettigheder
 
@@ -71,9 +71,9 @@ Fejl: Konfigurationsfilen blev ikke læst, da der ikke var tilstrækkelige retti
    ved Microsoft.Web.Administration.ServerManager.SitesCollectionCreator()
    ved Microsoft.Web.Administration.Lazy.Initialize[T](T& target, CreateInstanceDelegate`1 valueFactory)
    ved Microsoft.Azure.Plugins.Plugin.WadConfigProcessor.AddDirectories(EventsType mdsEvents, Directories wadDirectories)
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:18] Running in emulator mode, crash dumps not enabled
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:18] Checking to see if Application Insights extension needs to be configured.
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:45:18] In emulator mode and using devstore updating XStoreAccount info, command line args: -LocalPath "C:\Users\bas28\AppData\Local\dftmp\Resources\3e427a49-485e-47c1-ad20-ee68e5d85218\WAD0105"  -ConfigFile "C:\Users\bas28\AppData\Local\dftmp\Resources\3e427a49-485e-47c1-ad20-ee68e5d85218\WAD0105\Configuration\MaConfig.xml" -ShutDownEvent WADDM-ShutDown-b7c2368362134c10ad0160d2935f46d3  -TotalShutDownEvent WADDM-TotalShutDown-b7c2368362134c10ad0160d2935f46d3 -InitializedEvent WADM-StartUp-b7c2368362134c10ad0160d2935f46d3 -parent 17296 -events -wadVer1v5 -UseProxyServer -XStoreAccounts WadAccount#true#devstoreaccount1#Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==#http://127.0.0.1:10002#http://127.0.0.1:10001#http://127.0.0.1:10000
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:46:18] MonAgentHost.exe started
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:46:18] DiagnoticsPlugin started.
-DiagnosticsPlugin.exe Information: 0 : [18-05-2016 11:46:18] DiagnoticsPlugin now waiting on events "DiagnosticPlugin-ShutdownEvent", "DiagnosticPlugin-TotalShutdownEvent" or "DiagnosticPlugin-RestartEvent".
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:53] Running in emulator mode, crash dumps not enabled
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:53] Checking to see if Application Insights extension needs to be configured.
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:18:54] In emulator mode and using devstore updating XStoreAccount info, command line args: -LocalPath "C:\Users\bas28\AppData\Local\dftmp\Resources\bb1b1ceb-ce75-4ae1-84ef-a4f90f038784\WAD0105"  -ConfigFile "C:\Users\bas28\AppData\Local\dftmp\Resources\bb1b1ceb-ce75-4ae1-84ef-a4f90f038784\WAD0105\Configuration\MaConfig.xml" -ShutDownEvent WADDM-ShutDown-934778cfb84b41f7953293d003974804  -TotalShutDownEvent WADDM-TotalShutDown-934778cfb84b41f7953293d003974804 -InitializedEvent WADM-StartUp-934778cfb84b41f7953293d003974804 -parent 76 -events -wadVer1v5 -UseProxyServer -XStoreAccounts WadAccount#true#devstoreaccount1#Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==#http://127.0.0.1:10002#http://127.0.0.1:10001#http://127.0.0.1:10000
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:19:54] MonAgentHost.exe started
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:19:54] DiagnoticsPlugin started.
+DiagnosticsPlugin.exe Information: 0 : [20-05-2016 15:19:54] DiagnoticsPlugin now waiting on events "DiagnosticPlugin-ShutdownEvent", "DiagnosticPlugin-TotalShutdownEvent" or "DiagnosticPlugin-RestartEvent".

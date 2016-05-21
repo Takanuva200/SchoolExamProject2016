@@ -121,6 +121,6 @@ C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServi
 C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\bin\ru\System.Spatial.resources.dll
 C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\obj\Debug\WCFServiceWebRole1.csprojResolveAssemblyReference.cache
 C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\obj\Debug\WCFServiceWebRole1.dll
 C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\obj\Debug\WCFServiceWebRole1.pdb
+C:\Users\bas28\Source\Repos\SchoolExamProject2016\ProjectAPIConnenction\WCFServiceWebRole1\obj\Debug\WCFServiceWebRole1.csprojResolveAssemblyReference.cache
