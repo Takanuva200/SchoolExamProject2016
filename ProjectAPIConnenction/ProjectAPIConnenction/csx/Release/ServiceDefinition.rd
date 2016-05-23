@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProjectAPIConnenction" generation="1" functional="0" release="0" Id="705fce27-fcdc-4559-98d1-028c1fc9a3f8" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProjectAPIConnenction" generation="1" functional="0" release="0" Id="2d52d920-f76c-4a4f-bf02-4cd07ab05c66" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="ProjectAPIConnenctionGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -70,9 +70,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="6ff60f01-eb41-45eb-9f9d-46891e090866" ref="Microsoft.RedDog.Contract\ServiceContract\ProjectAPIConnenctionContract@ServiceDefinition">
+    <implementation Id="14a68ef5-3245-4a3a-bcf0-1d5163bae17f" ref="Microsoft.RedDog.Contract\ServiceContract\ProjectAPIConnenctionContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="691e37ba-9718-4419-a659-bf165d8d54d6" ref="Microsoft.RedDog.Contract\Interface\WCFServiceWebRole1:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="4f87b608-c929-450b-ae14-c269ea43e476" ref="Microsoft.RedDog.Contract\Interface\WCFServiceWebRole1:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/ProjectAPIConnenction/ProjectAPIConnenctionGroup/WCFServiceWebRole1:Endpoint1" />
           </inPort>

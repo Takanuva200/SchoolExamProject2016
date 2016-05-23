@@ -10,10 +10,18 @@ namespace WCFServiceWebRole1
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+        /// <summary>
+        /// A string that connects the program to the database
+        /// </summary>
         private const string myConnectionString =
             "Database=DAT_Adpoim;Data Source=eu-cdbr-azure-north-e.cloudapp.net;User Id=b98d5b0a7ddc13;Password=43d25694";
 
         // Get All Methods:
+
+        /// <summary>
+        /// Gets all ads from the database
+        /// </summary>
+        /// <returns>Returns a list of all the ads</returns>
         public List<Ads> GetAllAds()
         {
             const string selectAllAds = "select * from ADS";
@@ -38,6 +46,11 @@ namespace WCFServiceWebRole1
             }
             return result;
         }
+
+        /// <summary>
+        /// Gets all movement sensors from the database
+        /// </summary>
+        /// <returns>Returns a list of all the movement sensors</returns>
         public List<MovementSensor> GetAllMovementSensors()
         {
             const string selectAllMovementSensors = "select * from MS";
@@ -62,6 +75,11 @@ namespace WCFServiceWebRole1
             }
             return result;
         }
+
+        /// <summary>
+        /// Gets all connected ads and movement sensors from the database
+        /// </summary>
+        /// <returns>Returns a list of all the connected ads and movement sensors</returns>
         public List<MovementSensorToAds> GetAllMovementSensorToAds()
         {
             const string selectMovementSensorToAds = "select * from MSToADS";
@@ -88,44 +106,49 @@ namespace WCFServiceWebRole1
         }
 
         // Get Specific Methods:
-        public Ads GetSpecificAd(string address)
+
+        /// <summary>
+        /// Gets a specific ad from the database
+        /// </summary>
+        /// <param name="id">Uses parameter id to look in the database for the id with the same value</param>
+        /// <returns>Returns the ad with the same address as the parameter</returns>
+        public Ads GetSpecificAd(int id)
         {
-            string realAddress = "";
-            const string selectAllAddress = "select * from ADS";
-            var result = new List<string>();
-            using (var sqlConnection = new MySqlConnection(myConnectionString))
-            {
-                sqlConnection.Open();
-                using (var cmd = new MySqlCommand(selectAllAddress, sqlConnection))
-                {
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                var hello = reader.GetString("Address");
-                                result.Add(hello);
-                            }
-                        }
-                    }
-                }
-            }
-            foreach (var a in result)
-            {
-                if (a.Contains(address))
-                {
-                    realAddress = a;
-                }
-            }
-            var selectAllAds = "select * from ADS where Address=@Address";
+            //string realAddress = "";
+            //const string selectAllAddress = "select * from ADS";
+            //var result = new List<string>();
+            //using (var sqlConnection = new MySqlConnection(myConnectionString))
+            //{
+            //    sqlConnection.Open();
+            //    using (var cmd = new MySqlCommand(selectAllAddress, sqlConnection))
+            //    {
+            //        using (var reader = cmd.ExecuteReader())
+            //        {
+            //            if (reader.HasRows)
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    var hello = reader.GetString("Address");
+            //                    result.Add(hello);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //foreach (var a in result)
+            //{
+            //    if (a.Contains(address))
+            //    {
+            //        realAddress = a;
+            //    }
+            //}
+            var selectAllAds = "select * from ADS where ADS_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
 
                 using (var cmd = new MySqlCommand(selectAllAds, sqlConnection))
                 {
-                    cmd.Parameters.AddWithValue("@Address", realAddress);
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.HasRows)
@@ -139,44 +162,49 @@ namespace WCFServiceWebRole1
             }
             return null;
         }
-        public MovementSensor GetSpecificMovementSensor(string address)
+
+        /// <summary>
+        /// Gets a specific movement sensor from the database
+        /// </summary>
+        /// <param name="id">Uses parameter id to look in the database for the id with the same value</param>
+        /// <returns>Returns the movement sensor with the same address as the parameter</returns>
+        public MovementSensor GetSpecificMovementSensor(int id)
         {
-            string realAddress = "";
-            const string selectAllAddress = "select * from ms";
-            var result = new List<string>();
-            using (var sqlConnection = new MySqlConnection(myConnectionString))
-            {
-                sqlConnection.Open();
-                using (var cmd = new MySqlCommand(selectAllAddress, sqlConnection))
-                {
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                var hello = reader.GetString("Address");
-                                result.Add(hello);
-                            }
-                        }
-                    }
-                }
-            }
-            foreach (var a in result)
-            {
-                if (a.Contains(address))
-                {
-                    realAddress = a;
-                }
-            }
-            var selectAllMS = "select * from ms where Address=@Address";
+            //string realAddress = "";
+            //const string selectAllAddress = "select * from ms";
+            //var result = new List<string>();
+            //using (var sqlConnection = new MySqlConnection(myConnectionString))
+            //{
+            //    sqlConnection.Open();
+            //    using (var cmd = new MySqlCommand(selectAllAddress, sqlConnection))
+            //    {
+            //        using (var reader = cmd.ExecuteReader())
+            //        {
+            //            if (reader.HasRows)
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    var hello = reader.GetString("Address");
+            //                    result.Add(hello);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //foreach (var a in result)
+            //{
+            //    if (a.Contains(address))
+            //    {
+            //        realAddress = a;
+            //    }
+            //}
+            var selectAllMS = "select * from ms where MS_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
 
                 using (var cmd2 = new MySqlCommand(selectAllMS, sqlConnection))
                 {
-                    cmd2.Parameters.AddWithValue("@Address", realAddress);
                     using (var reader = cmd2.ExecuteReader())
                     {
                         if (reader.HasRows)
@@ -190,44 +218,49 @@ namespace WCFServiceWebRole1
             }
             return null;
         }
-        public MovementSensorToAds GetSpecficMovementSensorToAds(string address)
+
+        /// <summary>
+        /// Gets a specific connected ads and movement sensors from the database
+        /// </summary>
+        /// <param name="id">Uses parameter id to look in the database for the id with the same value</param>
+        /// <returns>Returns the connected ads and movement sensors with the same address as the parameter</returns>
+        public MovementSensorToAds GetSpecficMovementSensorToAds(int id)
         {
-            string realAddress = "";
-            const string selectAllAddress = "select * from MSToAds";
-            var result = new List<string>();
-            using (var sqlConnection = new MySqlConnection(myConnectionString))
-            {
-                sqlConnection.Open();
-                using (var cmd = new MySqlCommand(selectAllAddress, sqlConnection))
-                {
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                var hello = reader.GetString("ADS_Address");
-                                result.Add(hello);
-                            }
-                        }
-                    }
-                }
-            }
-            foreach (var a in result)
-            {
-                if (a.Contains(address))
-                {
-                    realAddress = a;
-                }
-            }
-            var selectAllMSAd = "select * from MSToADS where ADS_Address=@ADS_Address";
+            //string realAddress = "";
+            //const string selectAllAddress = "select * from MSToAds";
+            //var result = new List<string>();
+            //using (var sqlConnection = new MySqlConnection(myConnectionString))
+            //{
+            //    sqlConnection.Open();
+            //    using (var cmd = new MySqlCommand(selectAllAddress, sqlConnection))
+            //    {
+            //        using (var reader = cmd.ExecuteReader())
+            //        {
+            //            if (reader.HasRows)
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    var hello = reader.GetString("ADS_Address");
+            //                    result.Add(hello);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //foreach (var a in result)
+            //{
+            //    if (a.Contains(address))
+            //    {
+            //        realAddress = a;
+            //    }
+            //}
+            var selectAllMSAd = "select * from MSToADS where MSToAds_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
 
                 using (var cmd = new MySqlCommand(selectAllMSAd, sqlConnection))
                 {
-                    cmd.Parameters.AddWithValue("@ADS_Address", realAddress);
                     using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.HasRows)
@@ -243,6 +276,12 @@ namespace WCFServiceWebRole1
         }
 
         // Add Methods: 
+
+        /// <summary>
+        /// Adds an advertisment to the database
+        /// </summary>
+        /// <param name="addressOwner">The parameter is the input (advertisment) added to the database</param>
+        /// <returns>Returns the added advertisment to make sure it is added</returns>
         public string AddAdvertisment(string addressOwner)
         {
             var splits = addressOwner.Split('.');
@@ -263,6 +302,12 @@ namespace WCFServiceWebRole1
             }
             return splits[0] + " " + splits[1];
         }
+
+        /// <summary>
+        /// Adds a movement sensor to the database
+        /// </summary>
+        /// <param name="newSensor">The parameter is the input (movement sensor) added to the database</param>
+        /// <returns>Returns the added movement sensor to make sure it is added</returns>
         public MovementSensor AddMovementSensor(MovementSensor newSensor)
         {
             var addSensorString = "insert into MS(address, Activity) value (@newAddress, @newActivity)";
@@ -280,17 +325,23 @@ namespace WCFServiceWebRole1
             }
             return newSensor;
         }
+
+        /// <summary>
+        /// Adds a connection between ads and movement sensors to the database
+        /// </summary>
+        /// <param name="newMStoAd">The parameter is the input (connected ads and movement sensor) added to the database</param>
+        /// <returns>Returns the added connected ads and movement sensor to make sure it is added</returns>
         public MovementSensorToAds AddMovementSensorToAd(MovementSensorToAds newMStoAd)
         {
-            var addSensorString = "insert into MSToADS(MS_Address, ADS_Address) value (@newMsAddress, @newAdAddress)";
+            var addSensorString = "insert into MSToADS(MS_ID, ADS_ID) value (@newMsID, @newAdID)";
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
 
                 using (var cmd = new MySqlCommand(addSensorString, sqlConnection))
                 {
-                    cmd.Parameters.AddWithValue("@newMsAddress", newMStoAd.MovementSensorAddress);
-                    cmd.Parameters.AddWithValue("@newAdAddress", newMStoAd.AdAddress);
+                    cmd.Parameters.AddWithValue("@newMsID", newMStoAd.MovementSensorID);
+                    cmd.Parameters.AddWithValue("@newAdID", newMStoAd.AdID);
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
@@ -299,9 +350,16 @@ namespace WCFServiceWebRole1
         }
 
         // Update Methods:
-        public Ads UpdateAdvertisment(string oldAddress, Ads newUpdatedAd)
+
+        /// <summary>
+        /// Updates an advertisment in the database
+        /// </summary>
+        /// <param name="id">Is used to find the advertisment that needs to be updated</param>
+        /// <param name="newUpdatedAd">Is the new information you would like to change in the ad</param>
+        /// <returns>Returns the advertisment to make sure it is updated</returns>
+        public Ads UpdateAdvertisment(int id, Ads newUpdatedAd)
         {
-            var updateAd = "UPDATE ADS set  Address=@updatedAddress, owner=@updatedOwner, dateOfExpire = @updateddateOfExpire where Address=" + oldAddress;
+            var updateAd = "UPDATE ADS set Address=@updatedAddress, owner=@updatedOwner, dateOfExpire = @updateddateOfExpire where ADS_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
@@ -316,9 +374,16 @@ namespace WCFServiceWebRole1
             }
             return newUpdatedAd;
         }
-        public MovementSensor UpdateMSensor(string oldAddress, MovementSensor newSensor)
+
+        /// <summary>
+        /// Updates a movement sensor in the database
+        /// </summary>
+        /// <param name="id">Is used to find the movement sensor that needs to be updated</param>
+        /// <param name="newSensor">Is the new information you would like to change in the sensor</param>
+        /// <returns>Returns the movement sensor to make sure it is updated</returns>
+        public MovementSensor UpdateMSensor(int id, MovementSensor newSensor)
         {
-            var updateMs = "UPDATE MS set Address=@updatedAddress, Activity=@updatedActivity where Address=" + oldAddress;
+            var updateMs = "UPDATE MS set Address=@updatedAddress, Activity=@updatedActivity where MS_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
@@ -332,16 +397,23 @@ namespace WCFServiceWebRole1
             }
             return newSensor;
         }
-        public MovementSensorToAds UpdateMsToAd(string oldAddress, MovementSensorToAds newMsAds)
+
+        /// <summary>
+        /// Updates a connected movement sensor and advertisment in the database
+        /// </summary>
+        /// <param name="id">Is used to find the connected movement sensor and advertisment that needs to be updated</param>
+        /// <param name="newMsAds">Is the new information you would like to change in the connected movement sensor and advertisment</param>
+        /// <returns>Returns the connected movement sensor and advertisment to make sure it is updated</returns>
+        public MovementSensorToAds UpdateMsToAd(int id, MovementSensorToAds newMsAds)
         {
-            var updateMsAd = "UPDATE MS set MS_Address=@updateMSdAddress, ADS_Address=@updatedADAddress where ADS_Address =" + oldAddress;
+            var updateMsAd = "UPDATE MS set MS_ID=@updateMSID, ADS_ID=@updatedADID where MSToAds_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
                 using (var cmd = new MySqlCommand(updateMsAd, sqlConnection))
                 {
-                    cmd.Parameters.AddWithValue("@updateMSdAddress", newMsAds.MovementSensorAddress);
-                    cmd.Parameters.AddWithValue("@updatedADAddress", newMsAds.AdAddress);
+                    cmd.Parameters.AddWithValue("@updateMSID", newMsAds.MovementSensorID);
+                    cmd.Parameters.AddWithValue("@updatedADID", newMsAds.AdID);
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
@@ -350,44 +422,50 @@ namespace WCFServiceWebRole1
         }
 
         // Delete Methods:
-        public void DeleteSpecificAd(string address)
+
+        /// <summary>
+        /// Deletes a specific advertisment
+        /// </summary>
+        /// <param name="id">Is used to find the advertisment that needs to be deleted</param>
+        public void DeleteSpecificAd(int id)
         {
-            var deleteAd = "DELETE from ADS where Address=" + address;
-            var deleteAdToMS = "DELETE from MSToADS where ADS_Address=" + address;
+            var deleteAd = "DELETE from ADS where ADS_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
                 using (var cmd = new MySqlCommand(deleteAd, sqlConnection))
                 {
-                    var cmd2 = new MySqlCommand(deleteAdToMS, sqlConnection);
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.ExecuteNonQuery();
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
             }
         }
-        public void DeleteSpecificSensor(string address)
-        {
-            var deleteSensor = "DELETE from MS where Address=" + address;
-            var deleteAdToMS = "DELETE from MSToADS where MS_Address=" + address;
 
+        /// <summary>
+        /// Deletes a specific movement sensor
+        /// </summary>
+        /// <param name="id">Is used to find the movement sensor that needs to be deleted</param>
+        public void DeleteSpecificSensor(int id)
+        {
+            var deleteSensor = "DELETE from MS where MS_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
                 using (var cmd = new MySqlCommand(deleteSensor, sqlConnection))
                 {
-                    var cmd2 = new MySqlCommand(deleteAdToMS, sqlConnection);
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.ExecuteNonQuery();
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
                 }
             }
         }
-        public void DeleteSpecificSensorToAd(string address)
+
+        /// <summary>
+        /// Deletes a specific connected movement sensor and advertisment
+        /// </summary>
+        /// <param name="id">Is used to find the connected movement sensor and advertisment that needs to be deleted</param>
+        public void DeleteSpecificSensorToAd(int id)
         {
-            var deleteSensor = "DELETE from MSToADS where ADS_Address=" + address;
+            var deleteSensor = "DELETE from MSToADS where MSToAds_ID=" + id;
             using (var sqlConnection = new MySqlConnection(myConnectionString))
             {
                 sqlConnection.Open();
@@ -400,10 +478,16 @@ namespace WCFServiceWebRole1
         }
 
         //Reades data from database
+
+        /// <summary>
+        /// Reads the movement sensor data from the database and set it to the right MovementSensor class values
+        /// </summary>
+        /// <param name="reader">Reads the collumbs in the database</param>
+        /// <returns>Returns the movement sensor object with the values of the database MS table</returns>
         private static MovementSensor ReadSensor(IDataRecord reader)
         {
-            var address = reader.GetString(0);
-            var activity = reader.GetInt32(1);
+            var address = reader.GetString(1);
+            var activity = reader.GetInt32(2);
             var movementSensor = new MovementSensor();
             {
                 movementSensor.Address = address;
@@ -411,11 +495,17 @@ namespace WCFServiceWebRole1
             }
             return movementSensor;
         }
+
+        /// <summary>
+        /// Reads the advertisment data from the database and set it to the right Ads class values
+        /// </summary>
+        /// <param name="reader">Reads the collumbs in the database</param>
+        /// <returns>Returns the advertisment object with the values of the database ADS table</returns>
         private static Ads ReadAds(IDataReader reader)
         {
-            var address = reader.GetString(0);
-            var owner = reader.GetString(1);
-            var dateOfExpire = reader.GetDateTime(2);
+            var address = reader.GetString(1);
+            var owner = reader.GetString(2);
+            var dateOfExpire = reader.GetDateTime(3);
             var ads = new Ads();
             {
                 
@@ -425,14 +515,20 @@ namespace WCFServiceWebRole1
             }
             return ads;
         }
+
+        /// <summary>
+        /// Reads the connected movement sensor and advertisment data from the database and set it to the right MovementSensorToAds class values
+        /// </summary>
+        /// <param name="reader">Reads the collumbs in the database</param>
+        /// <returns>Returns the connected movement sensor and advertisment object with the values of the database MSToAds table</returns>
         private static MovementSensorToAds ReadSensorToAds(IDataReader reader)
         {
-            var msAddress = reader.GetString(1);
-            var adAddress = reader.GetString(2);
+            var msId = reader.GetString(1);
+            var adId = reader.GetString(2);
             var movementSensorToAds = new MovementSensorToAds();
             {
-                movementSensorToAds.MovementSensorAddress = msAddress;
-                movementSensorToAds.AdAddress = adAddress;
+                movementSensorToAds.MovementSensorID = msId;
+                movementSensorToAds.AdID = adId;
             }
             return movementSensorToAds;
         }
